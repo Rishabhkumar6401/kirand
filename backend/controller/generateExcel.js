@@ -75,7 +75,7 @@ const sendEmailWithAttachment = async (filePath) => {
 
     const mailOptions = {
       from: "gozoomtechnologies@gmail.com", // Sender address
-      to: "drarjit26@gmail.com, chabramohit@gmail.com", // Recipient email
+      to: "gozoomtechnologies@gmail.com", // Recipient email
       subject: "Doctor Commissions Report",
       text: "Please find the attached Doctor Commissions Report.",
       attachments: [

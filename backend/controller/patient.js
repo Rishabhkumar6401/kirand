@@ -1,11 +1,12 @@
 const Patient = require("../Model/patient");
 const DoctorDB = require("../Model/Doctor");
 const Order = require('../Model/Order');
+
 const AddPatient = async (req, res) => {
-  const { name, age, address, phoneNo } = req.body;
+  const { name, age, gender, address, phoneNo } = req.body;
   try {
     const newPatient = new Patient({
-      name, age, address, phoneNo
+      name, age, gender, address, phoneNo
     });
     await newPatient.save();
 
@@ -21,10 +22,10 @@ const AddPatient = async (req, res) => {
     });
   }
 }
-
+ 
 const UpdatePatient = async (req, res) => {
   const { patientId } = req.params; // Extract patient ID from the URL parameters
-  const { name, age, address, phoneNo } = req.body;
+  const { name, age, gender, address, phoneNo } = req.body;
 
   try {
     // Example: Update the patient data in a database (assuming MongoDB as an example)
@@ -33,6 +34,7 @@ const UpdatePatient = async (req, res) => {
       {
         name,
         age,
+        gender,
         address,
         phoneNo,
       },
@@ -176,6 +178,8 @@ const checkPatientisNewByPhone = async (req, res) => {
       res.status(500).json({ message: "Error fetching patients", error });
     }
   };
+
+
   
   
 module.exports = {

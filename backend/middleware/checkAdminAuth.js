@@ -13,7 +13,7 @@ const checkAdminAuth = (req, res, next) => {
  try {
   const token = authHeader.split(' ')[1];
    const decoded =  jwt.verify(token, "SECRET")
-   req.admin = decoded;
+   req.user = decoded;
    next();
  } catch (error) {
   res.status(401).json({

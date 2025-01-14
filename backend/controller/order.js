@@ -7,6 +7,7 @@ const PlaceOrder = async (req, res) => {
     const {
       name,
       age,
+      gender,
       address,
       phoneNo,
       referredBy,
@@ -58,6 +59,7 @@ const PlaceOrder = async (req, res) => {
       serialNo,
       name,
       age,
+      gender,
       address,
       phoneNo,
       referredBy,

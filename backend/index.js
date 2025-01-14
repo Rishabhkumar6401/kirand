@@ -15,6 +15,7 @@ const orderRouter = require("./routes/order-router");
 const adminRouter = require("./routes/admin-router");
 const checkAuthRouter = require("./routes/checkAuth-router");
 const reportRouter = require("./routes/report-router");
+const authRouter = require("./routes/auth-router");
 
 const app = express();
 const PORT = 5000;
@@ -41,6 +42,7 @@ app.use("/api/", categoryRouter);
 app.use("/api/", subCategoryRouter);
 app.use("/api/", orderRouter);
 app.use("/api/", checkAuthRouter);
+app.use("/api/", authRouter);
 app.use("/admin/api/", adminRouter);
 app.use("/api/reports", reportRouter); // Route for generating reports
 
