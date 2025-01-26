@@ -17,7 +17,7 @@ const PlaceOrder = async (req, res) => {
       discount = 0,
       finalPayment,
       paymentMode,
-      referralFee = 0,
+      referralFee,
     } = req.body;
 
     // Get today's date in DDMMYYYY format
@@ -319,9 +319,4 @@ const fetchFilteredOrders = async (req, res) => {
 
 
 
-
-
-
-
-
-module.exports = { PlaceOrder, fetchOrder, fetchAllOrder, EditOrder, DeleteOrder, fetchAllOrdersFromDB, fetchFilteredOrders};
+module.exports = { PlaceOrder, fetchOrder, fetchAllOrder, EditOrder, DeleteOrder, fetchAllOrdersFromDB, fetchFilteredOrders };

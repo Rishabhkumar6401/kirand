@@ -16,6 +16,7 @@ const adminRouter = require("./routes/admin-router");
 const checkAuthRouter = require("./routes/checkAuth-router");
 const reportRouter = require("./routes/report-router");
 const authRouter = require("./routes/auth-router");
+const unbilledRouter = require("./routes/unbilled-router");
 
 const app = express();
 const PORT = 5000;
@@ -43,6 +44,7 @@ app.use("/api/", subCategoryRouter);
 app.use("/api/", orderRouter);
 app.use("/api/", checkAuthRouter);
 app.use("/api/", authRouter);
+app.use("/api/", unbilledRouter);
 app.use("/admin/api/", adminRouter);
 app.use("/api/reports", reportRouter); // Route for generating reports
 
@@ -54,6 +56,7 @@ app.use("/*", (req, res) => {
     res.status(404).json({ error: "API route not found" });
   }
 });
+
 
 // Scheduled Job to Generate Excel Report on the Last Day of Each Month at 11:55 PM
 nodeSchedule.scheduleJob("55 23 28-31 * *", async () => {
