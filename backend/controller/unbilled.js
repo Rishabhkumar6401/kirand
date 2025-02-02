@@ -16,7 +16,8 @@ const createUnbilled = async (req, res) => {
       discount = 0,
       finalPayment,
       paymentMode,
-      referralFee ,
+      referralFee,
+      placedBy,
     } = req.body;
 
     // Generate a unique serial number using timestamp and random number
@@ -53,6 +54,7 @@ const createUnbilled = async (req, res) => {
       finalPayment,
       paymentMode,
       referralFee,
+      placedBy,
     });
 
     // Save the unbilled record

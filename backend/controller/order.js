@@ -18,6 +18,7 @@ const PlaceOrder = async (req, res) => {
       finalPayment,
       paymentMode,
       referralFee,
+      placedBy,
     } = req.body;
 
     // Get today's date in DDMMYYYY format
@@ -70,6 +71,7 @@ const PlaceOrder = async (req, res) => {
       finalPayment,
       paymentMode,
       referralFee,
+      placedBy,
     });
 
     // Save the order

@@ -66,6 +66,10 @@ const OrderSchema = new mongoose.Schema(
             required : true 
 
         },
+        placedBy: {
+            type: String,
+            required: true
+        },
     },
     {timestamps:true}
 )
